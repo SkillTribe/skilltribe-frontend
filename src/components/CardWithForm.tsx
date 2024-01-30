@@ -1,5 +1,3 @@
-import * as React from "react";
-
 import { Button } from "@/components/ui/button";
 import {
     Card,
@@ -31,10 +29,7 @@ export function CardWithForm() {
                     <div className="grid w-full items-center gap-4">
                         <div className="flex flex-col space-y-1.5">
                             <Label htmlFor="name">Name</Label>
-                            <Input
-                                id="name"
-                                placeholder="Name of your Task"
-                            />
+                            <Input id="name" placeholder="Name of your Task" />
                         </div>
                         <div className="flex flex-col space-y-1.5">
                             <Label htmlFor="task">Task Type</Label>

@@ -12,39 +12,7 @@ import {
 import { Terminal } from "lucide-react";
 import { ModeToggle } from "./ui/mode-toggle";
 import { Button } from "./ui/button";
-
-const components: { title: string; href: string; description: string }[] = [
-    {
-        title: "Title",
-        href: "",
-        description: "Lorem ipsum dolor sit amtet",
-    },
-    {
-        title: "Title",
-        href: "",
-        description: "Lorem ipsum dolor sit amtet",
-    },
-    {
-        title: "Title",
-        href: "",
-        description: "Lorem ipsum dolor sit amtet",
-    },
-    {
-        title: "Title",
-        href: "",
-        description: "Lorem ipsum dolor sit amtet",
-    },
-    {
-        title: "Title",
-        href: "",
-        description: "Lorem ipsum dolor sit amtet",
-    },
-    {
-        title: "Title",
-        href: "",
-        description: "Lorem ipsum dolor sit amtet",
-    },
-];
+import { components } from "@/data/Navbar";
 
 export function Navbar() {
     return (
