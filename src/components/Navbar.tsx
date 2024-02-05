@@ -11,9 +11,7 @@ import {
 } from "@/components/ui/navigation-menu";
 import { Terminal } from "lucide-react";
 import { ModeToggle } from "./ui/mode-toggle";
-import { Button } from "./ui/button";
 import { components } from "@/data/Navbar";
-import { Link } from "@tanstack/react-router";
 import LinkButton from "./LinkButton";
 
 export function Navbar() {
