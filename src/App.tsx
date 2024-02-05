@@ -1,19 +1,38 @@
 import "./App.css";
 import { AppContainer } from "./components/AppContainer";
 import { ThemeProvider } from "./components/ui/theme-provider";
-import HomePage from "./pages/HomePage";
-import { Routes, Route } from "react-router-dom";
+import { RouterProvider, createRouter } from "@tanstack/react-router";
+import { routeTree } from "./routeTree.gen";
+import { AuthProvider, useAuth } from "./auth";
 
+// Set up a Router instance
+const router = createRouter({
+    routeTree,
+    defaultPreload: "intent",
+    context: {
+        auth: undefined!, // This will be set after we wrap the app in an AuthProvider
+    },
+});
+
+// Register things for typesafety
+declare module "@tanstack/react-router" {
+    interface Register {
+        router: typeof router;
+    }
+}
+function InnerApp() {
+    const auth = useAuth();
+    auth.isAuthenticated = true;
+    // auth.setUser("Zs");
+    return <RouterProvider router={router} context={{ auth }} />;
+}
 function App() {
     return (
         <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
             <AppContainer>
-                <Routes>
-                    <Route index={true} path="/" element={<HomePage />}></Route>
-                    {/* <Route path="/profile" element={}></Route>
-                    <Route path="/skills" element={}></Route>
-                    <Route path="/tasks" element={}></Route> */}
-                </Routes>
+                <AuthProvider>
+                    <InnerApp />
+                </AuthProvider>
             </AppContainer>
         </ThemeProvider>
     );
