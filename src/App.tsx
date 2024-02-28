@@ -1,4 +1,8 @@
 import "./App.css";
+import "@fontsource/roboto/300.css";
+import "@fontsource/roboto/400.css";
+import "@fontsource/roboto/500.css";
+import "@fontsource/roboto/700.css";
 import { AppContainer } from "./components/AppContainer";
 import { ThemeProvider } from "./components/ui/theme-provider";
 import { RouterProvider, createRouter } from "@tanstack/react-router";
